@@ -1,34 +1,34 @@
 import { useMemo } from 'react';
 import {
   CustomerEditorReturnflowDesk,
-  type CustomerEditorReturnflowDeskActionId,
   CustomerOperationsReturnflowDesk,
+  EmptyAndErrorRecoveryReturnflowDesk,
+  TriageBoardReturnflowDesk,
+  type CustomerEditorReturnflowDeskActionId,
   type CustomerOperationsReturnflowDeskActionId,
+  type EmptyAndErrorRecoveryReturnflowDeskActionId,
+  type TriageBoardReturnflowDeskActionId,
 } from './screens';
 import { publishReturnflowDeskBridge } from './test/bridge';
 import { useReturnflowDeskStore } from './features/returnflow-desk/returnflow-desk.store';
-import { createReturnRecord } from './features/surf-customer-operations/act_create_record';
-import { retryReturnflowLoad } from './features/surf-customer-operations/act_retry_load';
-import { selectReturnRecord } from './features/surf-customer-operations/act_select_record';
-import { cancelReturnEdit } from './features/surf-customer-editor/act_cancel_edit';
-import { saveReturnRecord } from './features/surf-customer-editor/act_save_record';
-
-type ReturnflowActionId = CustomerOperationsReturnflowDeskActionId | CustomerEditorReturnflowDeskActionId;
+import { searchTriageRecords } from './features/surf-triage-board/act_search_records';
+import { selectTriageRecord } from './features/surf-triage-board/act_select_record';
+import { updateTriageRecordStatus } from './features/surf-triage-board/act_update_record_status';
 
 export default function App() {
   const desk = useReturnflowDeskStore();
 
   publishReturnflowDeskBridge(desk.snapshot);
 
-  const actions = useMemo<Partial<Record<ReturnflowActionId, () => void>>>(
+  const triageActions = useMemo<Partial<Record<TriageBoardReturnflowDeskActionId, () => void>>>(
     () => ({
-      'create-return-1': () => createReturnRecord(desk),
-      'date-range-2': () => desk.setActivePanel('date-range'),
-      'export-3': () => desk.setActivePanel('export'),
-      'filter-settings-4': () => desk.setActivePanel('filters'),
-      'close-5': () => desk.setActivePanel('triage'),
-      'resolve-6': () => selectReturnRecord(desk, 'RET-1041'),
-      're-scan-7': () => retryReturnflowLoad(desk),
+      'create-return-4': () => desk.createDraftReturn(),
+      'filter-5': () => desk.setActivePanel('filters'),
+      'sort-6': () => desk.setActivePanel('sort'),
+      'assign-7': () => updateTriageRecordStatus(desk, 'RET-1038', 'inspection'),
+      'assign-8': () => updateTriageRecordStatus(desk, 'RET-1041', 'inspection'),
+      'inspect-9': () => desk.setActivePanel('inspection'),
+      'review-10': () => selectTriageRecord(desk, 'RET-1027'),
       'dashboard-1': () => desk.navigate('dashboard'),
       'triage-2': () => desk.navigate('triage'),
       'inventory-3': () => desk.navigate('inventory'),
@@ -36,26 +36,94 @@ export default function App() {
       'settings-5': () => desk.setActivePanel('settings'),
       'help-6': () => desk.setActivePanel('help'),
       'logout-7': () => desk.setActivePanel('logout'),
-      'cancel-edit-1': () => cancelReturnEdit(desk),
-      'save-return-2': () => saveReturnRecord(desk),
+      'notifications-1': () => desk.setActivePanel('notifications'),
+      'help-2': () => desk.setActivePanel('help'),
+      'settings-3': () => desk.setActivePanel('settings'),
     }),
     [desk],
   );
 
-  const showsEditor =
-    desk.snapshot.activePanel === 'record' || desk.snapshot.activePanel === 'create-return';
+  const operationsActions = useMemo<Partial<Record<CustomerOperationsReturnflowDeskActionId, () => void>>>(
+    () => ({
+      'create-return-1': () => desk.createDraftReturn(),
+      'date-range-2': () => desk.setActivePanel('date-range'),
+      'export-3': () => desk.setActivePanel('export'),
+      'filter-settings-4': () => desk.setActivePanel('filter-settings'),
+      'close-5': () => desk.navigate('triage'),
+      'resolve-6': () => desk.setActivePanel('resolved'),
+      're-scan-7': () => searchTriageRecords(desk, ''),
+      'dashboard-1': () => desk.navigate('dashboard'),
+      'triage-2': () => desk.navigate('triage'),
+      'inventory-3': () => desk.navigate('inventory'),
+      'reports-4': () => desk.navigate('reports'),
+      'settings-5': () => desk.setActivePanel('settings'),
+      'help-6': () => desk.setActivePanel('help'),
+      'logout-7': () => desk.setActivePanel('logout'),
+    }),
+    [desk],
+  );
 
-  const screen =
-    showsEditor
-      ? <CustomerEditorReturnflowDesk actions={actions} />
-      : <CustomerOperationsReturnflowDesk actions={actions} />;
+  const editorActions = useMemo<Partial<Record<CustomerEditorReturnflowDeskActionId, () => void>>>(
+    () => ({
+      'cancel-edit-1': () => desk.navigate('triage'),
+      'save-return-2': () => desk.navigate('triage'),
+    }),
+    [desk],
+  );
+
+  const recoveryActions = useMemo<Partial<Record<EmptyAndErrorRecoveryReturnflowDeskActionId, () => void>>>(
+    () => ({
+      'create-return-1': () => desk.createDraftReturn(),
+      'notifications-2': () => desk.setActivePanel('notifications'),
+      'help-3': () => desk.setActivePanel('help'),
+      'settings-4': () => desk.setActivePanel('settings'),
+      'close-5': () => desk.navigate('triage'),
+      'close-6': () => desk.navigate('triage'),
+      'filters-2-7': () => desk.setActivePanel('filters'),
+      'retry-8': () => searchTriageRecords(desk, ''),
+      'clear-all-filters-9': () => desk.navigate('triage'),
+      'create-new-return-10': () => desk.createDraftReturn(),
+      'dashboard-1': () => desk.navigate('dashboard'),
+      'triage-2': () => desk.navigate('triage'),
+      'inventory-3': () => desk.navigate('inventory'),
+      'reports-4': () => desk.navigate('reports'),
+      'settings-5': () => desk.setActivePanel('settings'),
+      'help-6': () => desk.setActivePanel('help'),
+      'logout-7': () => desk.setActivePanel('logout'),
+    }),
+    [desk],
+  );
+
+  const activeScreen = useMemo(() => {
+    if (desk.snapshot.activePanel === 'record' || desk.snapshot.activePanel === 'create-return') {
+      return <CustomerEditorReturnflowDesk actions={editorActions} />;
+    }
+
+    if (desk.snapshot.lastError || desk.snapshot.activePanel === 'empty-state') {
+      return <EmptyAndErrorRecoveryReturnflowDesk actions={recoveryActions} />;
+    }
+
+    if (desk.snapshot.activeRoute !== 'triage') {
+      return <CustomerOperationsReturnflowDesk actions={operationsActions} />;
+    }
+
+    return <TriageBoardReturnflowDesk actions={triageActions} />;
+  }, [
+    desk.snapshot.activePanel,
+    desk.snapshot.activeRoute,
+    desk.snapshot.lastError,
+    editorActions,
+    operationsActions,
+    recoveryActions,
+    triageActions,
+  ]);
 
   return (
     <div
       data-setfarm-root="returnflow-desk"
       className="min-h-screen w-full min-w-0 flex flex-col bg-slate-50 text-slate-950 overflow-x-hidden"
     >
-      {screen}
+      {activeScreen}
     </div>
   );
 }
