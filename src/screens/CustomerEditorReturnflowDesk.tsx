@@ -77,8 +77,8 @@ export function CustomerEditorReturnflowDesk({ actions }: CustomerEditorReturnfl
       <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
       <div className="flex flex-col gap-stack-dense">
       <label className="font-table-data text-table-data text-on-surface" htmlFor="return_reason">Return Reason <span className="text-error">*</span></label>
-      <select className="h-8 w-full bg-surface-container-lowest text-on-surface border border-error rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-error focus:border-transparent appearance-none transition-shadow" id="return_reason">
-      <option disabled={true} selected={true} value="">Select a reason...</option>
+      <select className="h-8 w-full bg-surface-container-lowest text-on-surface border border-error rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-error focus:border-transparent appearance-none transition-shadow" id="return_reason" defaultValue="">
+      <option disabled={true} value="">Select a reason...</option>
       <option value="defective">Defective Product</option>
       <option value="wrong_item">Wrong Item Shipped</option>
       <option value="not_needed">No Longer Needed</option>
@@ -91,9 +91,9 @@ export function CustomerEditorReturnflowDesk({ actions }: CustomerEditorReturnfl
       </div>
       <div className="flex flex-col gap-stack-dense">
       <label className="font-table-data text-table-data text-on-surface" htmlFor="inspection_lane">Inspection Lane Assignment <span className="text-error">*</span></label>
-      <select className="h-8 w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent appearance-none transition-shadow" id="inspection_lane">
+      <select className="h-8 w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent appearance-none transition-shadow" id="inspection_lane" defaultValue="lane_b">
       <option value="lane_a">Lane A (Standard)</option>
-      <option selected={true} value="lane_b">Lane B (Electronics)</option>
+      <option value="lane_b">Lane B (Electronics)</option>
       <option value="lane_c">Lane C (Heavy Goods)</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant hidden">
@@ -105,7 +105,7 @@ export function CustomerEditorReturnflowDesk({ actions }: CustomerEditorReturnfl
       {/* Section: Notes */}
       <div className="flex flex-col gap-stack-dense">
       <label className="font-table-data text-table-data text-on-surface" htmlFor="exception_notes">Exception Notes <span className="text-on-surface-variant font-normal ml-1">(Optional)</span></label>
-      <textarea className="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded p-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow resize-y" id="exception_notes" rows={3}>Customer indicated packaging was damaged upon arrival, but product appears intact on initial scan.</textarea>
+      <textarea className="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded p-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow resize-y" id="exception_notes" rows={3} defaultValue="Customer indicated packaging was damaged upon arrival, but product appears intact on initial scan." />
       </div>
       </form>
       </div>

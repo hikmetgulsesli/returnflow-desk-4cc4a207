@@ -9,8 +9,6 @@ import {
   type EmptyAndErrorRecoveryReturnflowDeskActionId,
   type TriageBoardReturnflowDeskActionId,
 } from './screens';
-import { createReturnFromEmptyRecovery } from './features/surf-empty-and-error-recovery/act_create_record';
-import { retryEmptyAndErrorRecoveryLoad } from './features/surf-empty-and-error-recovery/act_retry_load';
 import { publishReturnflowDeskBridge } from './test/bridge';
 import { useReturnflowDeskStore } from './features/returnflow-desk/returnflow-desk.store';
 import { searchTriageRecords } from './features/surf-triage-board/act_search_records';
@@ -24,7 +22,6 @@ export default function App() {
 
   const triageActions = useMemo<Partial<Record<TriageBoardReturnflowDeskActionId, () => void>>>(
     () => ({
-      search: () => searchTriageRecords(desk, ''),
       'create-return-4': () => desk.createDraftReturn(),
       'filter-5': () => desk.setActivePanel('filters'),
       'sort-6': () => desk.setActivePanel('sort'),
@@ -76,16 +73,16 @@ export default function App() {
 
   const recoveryActions = useMemo<Partial<Record<EmptyAndErrorRecoveryReturnflowDeskActionId, () => void>>>(
     () => ({
-      'create-return-1': () => createReturnFromEmptyRecovery(desk),
+      'create-return-1': () => desk.createDraftReturn(),
       'notifications-2': () => desk.setActivePanel('notifications'),
       'help-3': () => desk.setActivePanel('help'),
       'settings-4': () => desk.setActivePanel('settings'),
       'close-5': () => desk.navigate('triage'),
       'close-6': () => desk.navigate('triage'),
       'filters-2-7': () => desk.setActivePanel('filters'),
-      'retry-8': () => retryEmptyAndErrorRecoveryLoad(desk),
+      'retry-8': () => searchTriageRecords(desk, ''),
       'clear-all-filters-9': () => desk.navigate('triage'),
-      'create-new-return-10': () => createReturnFromEmptyRecovery(desk),
+      'create-new-return-10': () => desk.createDraftReturn(),
       'dashboard-1': () => desk.navigate('dashboard'),
       'triage-2': () => desk.navigate('triage'),
       'inventory-3': () => desk.navigate('inventory'),
