@@ -53,7 +53,7 @@ export default function App() {
   return (
     <div
       data-setfarm-root="returnflow-desk"
-      className="min-h-screen w-full flex bg-slate-50 text-slate-950"
+      className="min-h-screen w-full min-w-0 flex flex-col bg-slate-50 text-slate-950 overflow-x-hidden"
     >
       {screen}
     </div>
