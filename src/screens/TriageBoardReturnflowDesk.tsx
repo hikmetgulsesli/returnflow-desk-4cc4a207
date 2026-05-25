@@ -7,23 +7,16 @@
 // 3. Wire interactive controls through the typed actions prop
 // 4. Replace placeholder data with props/state
 
-import { useState } from "react";
 import { Circle, ListFilter, Plus, Search, Settings, TriangleAlert } from "lucide-react";
 
 
-export type TriageBoardReturnflowDeskActionId = "notifications-1" | "help-2" | "settings-3" | "create-return-4" | "filter-5" | "sort-6" | "assign-7" | "assign-8" | "inspect-9" | "review-10" | "dashboard-1" | "triage-2" | "inventory-3" | "reports-4" | "settings-5" | "help-6" | "logout-7";
+export type TriageBoardReturnflowDeskActionId = "search" | "notifications-1" | "help-2" | "settings-3" | "create-return-4" | "filter-5" | "sort-6" | "assign-7" | "assign-8" | "inspect-9" | "review-10" | "dashboard-1" | "triage-2" | "inventory-3" | "reports-4" | "settings-5" | "help-6" | "logout-7";
 
 export interface TriageBoardReturnflowDeskProps {
   actions?: Partial<Record<TriageBoardReturnflowDeskActionId, () => void>>;
 }
 
 export function TriageBoardReturnflowDesk({ actions }: TriageBoardReturnflowDeskProps) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const canSubmitSearch = searchQuery.trim().length > 0;
-  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
-
   return (
     <>
       {/* TopNavBar */}
@@ -32,12 +25,11 @@ export function TriageBoardReturnflowDesk({ actions }: TriageBoardReturnflowDesk
       <span className="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">ReturnFlow Desk</span>
       </div>
       <div className="flex-1 flex justify-center px-8">
-      <form className="relative w-full max-w-md" role="search" onSubmit={handleSearchSubmit}>
-      <button className="absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] disabled:opacity-60" type="submit" aria-label="Search" disabled={!canSubmitSearch}>
-      <Search className="text-[18px]" aria-hidden={true} focusable="false" />
-      </button>
-      <input className="w-full h-8 pl-8 pr-3 text-body-sm bg-surface-container border border-outline-variant rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search tracking ID or customer (press / to focus)" type="text" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
-      </form>
+      <div className="relative w-full max-w-md">
+      <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" aria-hidden={true} focusable="false" />
+      <input className="w-full h-8 pl-8 pr-3 text-body-sm bg-surface-container border border-outline-variant rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search tracking ID or customer (press / to focus)" type="text" />
+      <button className="absolute right-1 top-1/2 -translate-y-1/2 h-6 px-2 text-label-caps font-label-caps text-primary hover:text-surface-tint transition-colors rounded" type="button" data-action-id="search" onClick={actions?.["search"]}>Search</button>
+      </div>
       </div>
       <div className="flex items-center gap-2">
       <button className="w-8 h-8 flex items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded cursor-pointer active:opacity-80" type="button" data-action-id="notifications-1" onClick={actions?.["notifications-1"]}>

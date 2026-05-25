@@ -29,7 +29,7 @@ export function CustomerOperationsReturnflowDesk({ actions }: CustomerOperations
       <Menu className="cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors rounded p-1 text-[20px]" aria-hidden={true} focusable="false" />
       </div>
       </header>
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 min-w-0 overflow-hidden">
       {/* SideNavBar (Desktop) */}
       <nav className="hidden md:flex flex-col h-full p-unit gap-stack-compact bg-surface-container-low text-primary font-body-sm text-body-sm h-screen w-64 fixed left-0 top-0 z-40 border-r border-outline-variant flat no shadows transition-colors duration-150 ease-in-out">
       <div className="flex items-center gap-stack-compact p-gutter mb-stack-compact">
@@ -77,7 +77,7 @@ export function CustomerOperationsReturnflowDesk({ actions }: CustomerOperations
       </div>
       </nav>
       {/* Main Content Area */}
-      <main className="flex-1 md:ml-64 flex flex-col h-full bg-surface-bright">
+      <main className="flex-1 min-w-0 w-full md:ml-64 xl:mr-[320px] flex flex-col h-full bg-surface-bright">
       {/* Desktop Top Search Bar / Global Actions */}
       <div className="hidden md:flex justify-between items-center h-12 px-margin-page border-b border-outline-variant bg-surface">
       <div className="relative w-96">
@@ -92,7 +92,7 @@ export function CustomerOperationsReturnflowDesk({ actions }: CustomerOperations
       </div>
       </div>
       {/* Dashboard Content Scrollable Area */}
-      <div className="flex-1 overflow-auto p-gutter md:p-margin-page flex flex-col gap-margin-page">
+      <div className="flex-1 min-w-0 overflow-auto p-gutter md:p-margin-page flex flex-col gap-margin-page">
       {/* Metrics Header */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
       {/* Metric 1 */}
@@ -129,7 +129,7 @@ export function CustomerOperationsReturnflowDesk({ actions }: CustomerOperations
       </div>
       </section>
       {/* Data Table Section */}
-      <section className="flex-1 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden min-h-[400px]">
+      <section className="flex-1 min-w-0 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden min-h-[400px]">
       {/* Table Toolbar */}
       <div className="p-3 border-b border-outline-variant flex flex-col sm:flex-row justify-between items-start sm:items-center gap-stack-compact bg-surface-container-low">
       <div className="flex items-center gap-stack-compact flex-wrap">
@@ -246,7 +246,7 @@ export function CustomerOperationsReturnflowDesk({ actions }: CustomerOperations
       </div>
       </main>
       {/* Preview Drawer (Visible based on selection) */}
-      <aside className="hidden xl:flex flex-col w-[320px] bg-surface-container-lowest border-l border-outline-variant h-full">
+      <aside className="hidden xl:flex fixed right-0 top-0 z-30 flex-col w-[320px] bg-surface-container-lowest border-l border-outline-variant h-screen">
       <div className="p-3 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
       <span className="font-headline-sm text-headline-sm text-on-surface">Return Details</span>
       <button className="text-on-surface-variant hover:text-on-surface" type="button" data-action-id="close-5" onClick={actions?.["close-5"]}>
