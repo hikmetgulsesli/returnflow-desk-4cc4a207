@@ -9,6 +9,8 @@ import {
   type EmptyAndErrorRecoveryReturnflowDeskActionId,
   type TriageBoardReturnflowDeskActionId,
 } from './screens';
+import { createReturnFromEmptyRecovery } from './features/surf-empty-and-error-recovery/act_create_record';
+import { retryEmptyAndErrorRecoveryLoad } from './features/surf-empty-and-error-recovery/act_retry_load';
 import { publishReturnflowDeskBridge } from './test/bridge';
 import { useReturnflowDeskStore } from './features/returnflow-desk/returnflow-desk.store';
 import { searchTriageRecords } from './features/surf-triage-board/act_search_records';
@@ -73,16 +75,16 @@ export default function App() {
 
   const recoveryActions = useMemo<Partial<Record<EmptyAndErrorRecoveryReturnflowDeskActionId, () => void>>>(
     () => ({
-      'create-return-1': () => desk.createDraftReturn(),
+      'create-return-1': () => createReturnFromEmptyRecovery(desk),
       'notifications-2': () => desk.setActivePanel('notifications'),
       'help-3': () => desk.setActivePanel('help'),
       'settings-4': () => desk.setActivePanel('settings'),
       'close-5': () => desk.navigate('triage'),
       'close-6': () => desk.navigate('triage'),
       'filters-2-7': () => desk.setActivePanel('filters'),
-      'retry-8': () => searchTriageRecords(desk, ''),
+      'retry-8': () => retryEmptyAndErrorRecoveryLoad(desk),
       'clear-all-filters-9': () => desk.navigate('triage'),
-      'create-new-return-10': () => desk.createDraftReturn(),
+      'create-new-return-10': () => createReturnFromEmptyRecovery(desk),
       'dashboard-1': () => desk.navigate('dashboard'),
       'triage-2': () => desk.navigate('triage'),
       'inventory-3': () => desk.navigate('inventory'),
