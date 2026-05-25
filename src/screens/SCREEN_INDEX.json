@@ -1,0 +1,367 @@
+[
+  {
+    "screenId": "a3e526b33e9b4f89b157f2e6e37711a8",
+    "title": "Triage Board - ReturnFlow Desk",
+    "componentName": "TriageBoardReturnflowDesk",
+    "file": "src/screens/TriageBoardReturnflowDesk.tsx",
+    "buttons": 10,
+    "inputs": 1,
+    "links": 7,
+    "actions": [
+      {
+        "id": "notifications-1",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 0
+      },
+      {
+        "id": "help-2",
+        "kind": "button",
+        "label": "Help",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "button",
+        "label": "Settings",
+        "index": 2
+      },
+      {
+        "id": "create-return-4",
+        "kind": "button",
+        "label": "Create Return",
+        "index": 3
+      },
+      {
+        "id": "filter-5",
+        "kind": "button",
+        "label": "Filter",
+        "index": 4
+      },
+      {
+        "id": "sort-6",
+        "kind": "button",
+        "label": "Sort",
+        "index": 5
+      },
+      {
+        "id": "assign-7",
+        "kind": "button",
+        "label": "Assign",
+        "index": 6
+      },
+      {
+        "id": "assign-8",
+        "kind": "button",
+        "label": "Assign",
+        "index": 7
+      },
+      {
+        "id": "inspect-9",
+        "kind": "button",
+        "label": "Inspect",
+        "index": 8
+      },
+      {
+        "id": "review-10",
+        "kind": "button",
+        "label": "Review",
+        "index": 9
+      },
+      {
+        "id": "dashboard-1",
+        "kind": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "triage-2",
+        "kind": "link",
+        "label": "Triage",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "inventory-3",
+        "kind": "link",
+        "label": "Inventory",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "reports-4",
+        "kind": "link",
+        "label": "Reports",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "help-6",
+        "kind": "link",
+        "label": "Help",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "logout-7",
+        "kind": "link",
+        "label": "Logout",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "608f6f2bb5b34cc4be316b3bcb072def",
+    "title": "Empty and Error Recovery - ReturnFlow Desk",
+    "componentName": "EmptyAndErrorRecoveryReturnflowDesk",
+    "file": "src/screens/EmptyAndErrorRecoveryReturnflowDesk.tsx",
+    "buttons": 10,
+    "inputs": 1,
+    "links": 7,
+    "actions": [
+      {
+        "id": "create-return-1",
+        "kind": "button",
+        "label": "Create Return",
+        "index": 0
+      },
+      {
+        "id": "notifications-2",
+        "kind": "button",
+        "label": "Notifications",
+        "index": 1
+      },
+      {
+        "id": "help-3",
+        "kind": "button",
+        "label": "Help",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "button",
+        "label": "Settings",
+        "index": 3
+      },
+      {
+        "id": "close-5",
+        "kind": "button",
+        "label": "Close",
+        "index": 4
+      },
+      {
+        "id": "close-6",
+        "kind": "button",
+        "label": "Close",
+        "index": 5
+      },
+      {
+        "id": "filters-2-7",
+        "kind": "button",
+        "label": "Filters (2)",
+        "index": 6
+      },
+      {
+        "id": "retry-8",
+        "kind": "button",
+        "label": "Retry",
+        "index": 7
+      },
+      {
+        "id": "clear-all-filters-9",
+        "kind": "button",
+        "label": "Clear All Filters",
+        "index": 8
+      },
+      {
+        "id": "create-new-return-10",
+        "kind": "button",
+        "label": "Create New Return",
+        "index": 9
+      },
+      {
+        "id": "dashboard-1",
+        "kind": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "triage-2",
+        "kind": "link",
+        "label": "Triage",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "inventory-3",
+        "kind": "link",
+        "label": "Inventory",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "reports-4",
+        "kind": "link",
+        "label": "Reports",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "help-6",
+        "kind": "link",
+        "label": "Help",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "logout-7",
+        "kind": "link",
+        "label": "Logout",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "1dbb43f6829e46bf9fb32fcf4f804583",
+    "title": "Customer Operations - ReturnFlow Desk",
+    "componentName": "CustomerOperationsReturnflowDesk",
+    "file": "src/screens/CustomerOperationsReturnflowDesk.tsx",
+    "buttons": 7,
+    "inputs": 6,
+    "links": 7,
+    "actions": [
+      {
+        "id": "create-return-1",
+        "kind": "button",
+        "label": "Create Return",
+        "index": 0
+      },
+      {
+        "id": "date-range-2",
+        "kind": "button",
+        "label": "Date Range",
+        "index": 1
+      },
+      {
+        "id": "export-3",
+        "kind": "button",
+        "label": "Export",
+        "index": 2
+      },
+      {
+        "id": "filter-settings-4",
+        "kind": "button",
+        "label": "Filter Settings",
+        "index": 3
+      },
+      {
+        "id": "close-5",
+        "kind": "button",
+        "label": "Close",
+        "index": 4
+      },
+      {
+        "id": "resolve-6",
+        "kind": "button",
+        "label": "Resolve",
+        "index": 5
+      },
+      {
+        "id": "re-scan-7",
+        "kind": "button",
+        "label": "Re-scan",
+        "index": 6
+      },
+      {
+        "id": "dashboard-1",
+        "kind": "link",
+        "label": "Dashboard",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "triage-2",
+        "kind": "link",
+        "label": "Triage",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "inventory-3",
+        "kind": "link",
+        "label": "Inventory",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "reports-4",
+        "kind": "link",
+        "label": "Reports",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "settings-5",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "help-6",
+        "kind": "link",
+        "label": "Help",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "logout-7",
+        "kind": "link",
+        "label": "Logout",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "22c76d93667d4cc69991d612f915c632",
+    "title": "Customer Editor - ReturnFlow Desk",
+    "componentName": "CustomerEditorReturnflowDesk",
+    "file": "src/screens/CustomerEditorReturnflowDesk.tsx",
+    "buttons": 2,
+    "inputs": 3,
+    "links": 0,
+    "actions": [
+      {
+        "id": "cancel-edit-1",
+        "kind": "button",
+        "label": "Cancel Edit",
+        "index": 0
+      },
+      {
+        "id": "save-return-2",
+        "kind": "button",
+        "label": "Save Return",
+        "index": 1
+      }
+    ]
+  }
+]
