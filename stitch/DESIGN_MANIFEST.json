@@ -1,0 +1,46 @@
+[
+  {
+    "screenId": "a3e526b33e9b4f89b157f2e6e37711a8",
+    "title": "Triage Board - ReturnFlow Desk",
+    "htmlFile": "a3e526b33e9b4f89b157f2e6e37711a8.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzI4NjU5YzhmYjg2NTQxYzk4M2NmOGY2MThjODFlMjQwEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2MDk5NjU3ODYyMjQ1MTg2ODg2&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/returnflow-desk-4cc4a207/stitch/a3e526b33e9b4f89b157f2e6e37711a8.html",
+    "surfaceIds": [
+      "SURF_TRIAGE_BOARD"
+    ]
+  },
+  {
+    "screenId": "608f6f2bb5b34cc4be316b3bcb072def",
+    "title": "Empty and Error Recovery - ReturnFlow Desk",
+    "htmlFile": "608f6f2bb5b34cc4be316b3bcb072def.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2JhYzE5MGM3NTZlZTQ2ZGVhZGY3NDMxMDk2YjVjNDE0EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2MDk5NjU3ODYyMjQ1MTg2ODg2&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/returnflow-desk-4cc4a207/stitch/608f6f2bb5b34cc4be316b3bcb072def.html",
+    "surfaceIds": [
+      "SURF_EMPTY_AND_ERROR_RECOVERY"
+    ]
+  },
+  {
+    "screenId": "1dbb43f6829e46bf9fb32fcf4f804583",
+    "title": "Customer Operations - ReturnFlow Desk",
+    "htmlFile": "1dbb43f6829e46bf9fb32fcf4f804583.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2VjNjcyMmE3YzUyNjRkNzNiNzMzN2YwYTMxOWJiZjI1EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2MDk5NjU3ODYyMjQ1MTg2ODg2&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/returnflow-desk-4cc4a207/stitch/1dbb43f6829e46bf9fb32fcf4f804583.html",
+    "surfaceIds": [
+      "SURF_CUSTOMER_OPERATIONS"
+    ]
+  },
+  {
+    "screenId": "22c76d93667d4cc69991d612f915c632",
+    "title": "Customer Editor - ReturnFlow Desk",
+    "htmlFile": "22c76d93667d4cc69991d612f915c632.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2VkZGQwODQyM2MzNTRiNDQ4ZTk1YWIzYzY3MmFkMDgxEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2MDk5NjU3ODYyMjQ1MTg2ODg2&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/returnflow-desk-4cc4a207/stitch/22c76d93667d4cc69991d612f915c632.html",
+    "surfaceIds": [
+      "SURF_CUSTOMER_EDITOR"
+    ]
+  }
+]

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Editor - ReturnFlow Desk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#271901",
+                      "on-surface": "#1b1b1d",
+                      "tertiary-fixed": "#fcdeb5",
+                      "secondary-fixed": "#d3e4fe",
+                      "inverse-surface": "#303032",
+                      "surface-container-low": "#f6f3f5",
+                      "secondary-container": "#d0e1fb",
+                      "surface": "#fcf8fa",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-surface-variant": "#45464d",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-container-high": "#eae7e9",
+                      "secondary": "#505f76",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "on-background": "#1b1b1d",
+                      "on-tertiary-fixed": "#271901",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e4e2e4",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "primary-fixed-dim": "#bec6e0",
+                      "background": "#fcf8fa",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#565e74",
+                      "on-tertiary": "#ffffff",
+                      "inverse-on-surface": "#f3f0f2",
+                      "on-secondary-container": "#54647a",
+                      "inverse-primary": "#bec6e0",
+                      "on-error-container": "#93000a",
+                      "outline": "#76777d",
+                      "surface-dim": "#dcd9db",
+                      "on-tertiary-container": "#98805d",
+                      "on-primary-fixed": "#131b2e",
+                      "surface-container": "#f0edef",
+                      "on-error": "#ffffff",
+                      "primary": "#000000",
+                      "surface-bright": "#fcf8fa",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-variant": "#e4e2e4",
+                      "outline-variant": "#c6c6cd",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "tertiary": "#000000",
+                      "on-primary-container": "#7c839b",
+                      "on-secondary-fixed": "#0b1c30",
+                      "primary-fixed": "#dae2fd",
+                      "primary-container": "#131b2e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "12px",
+                      "stack-compact": "8px",
+                      "unit": "4px",
+                      "margin-page": "24px",
+                      "stack-dense": "4px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "table-data": [
+                              "Inter"
+                      ],
+                      "display-metric": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "table-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-metric": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for dense feeling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c6c6cd; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #76777d; 
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Task Header (Simplified, isolated context) -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant px-margin-page h-14 flex items-center justify-between sticky top-0 z-10 shrink-0">
+<div class="flex items-center gap-stack-compact">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface transition-colors">arrow_back</span>
+<h1 class="font-headline-sm text-headline-sm text-on-surface ml-2">Edit Customer Return</h1>
+</div>
+<div class="flex items-center gap-gutter">
+<!-- Unsaved Changes Badge -->
+<div class="flex items-center gap-unit bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-1 rounded font-table-data text-table-data">
+<span class="material-symbols-outlined text-[16px]">pending</span>
+                Unsaved Changes
+            </div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<button class="text-on-surface-variant hover:text-on-surface font-table-data text-table-data transition-colors">
+                Cancel Edit
+            </button>
+<button class="bg-primary text-on-primary h-8 px-4 rounded font-table-data text-table-data hover:opacity-90 transition-opacity">
+                Save Return
+            </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-page flex justify-center items-start">
+<div class="w-full max-w-3xl flex flex-col gap-margin-page">
+<!-- Unsaved Changes Banner (More prominent) -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-4 flex items-start gap-stack-compact">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">info</span>
+<div>
+<h3 class="font-table-data text-table-data text-on-surface">You have unsaved changes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Please save your work before leaving this page to prevent data loss.</p>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm">
+<form class="p-margin-page flex flex-col gap-margin-page">
+<!-- Section: System Info (Readonly) -->
+<div class="flex flex-col gap-stack-dense">
+<label class="font-table-data text-table-data text-on-surface-variant">Order ID <span class="text-error">*</span></label>
+<input class="h-8 w-full md:w-1/2 bg-surface-container text-on-surface-variant border border-outline-variant rounded px-2 font-table-data text-table-data cursor-not-allowed select-none focus:outline-none" readonly="" type="text" value="ORD-8823-XYZ"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Generated by source system. Cannot be modified.</p>
+</div>
+<div class="h-px w-full bg-surface-variant"></div>
+<!-- Section: Customer Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-stack-dense">
+<label class="font-table-data text-table-data text-on-surface" for="customer_name">Customer Name <span class="text-error">*</span></label>
+<input class="h-8 w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="customer_name" type="text" value="Michael Chen"/>
+</div>
+<div class="flex flex-col gap-stack-dense">
+<label class="font-table-data text-table-data text-on-surface" for="customer_email">Customer Email <span class="text-on-surface-variant font-normal ml-1">(Optional)</span></label>
+<input class="h-8 w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="customer_email" type="email" value="m.chen@example.com"/>
+</div>
+</div>
+<div class="h-px w-full bg-surface-variant"></div>
+<!-- Section: Return Specifics -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-stack-dense">
+<label class="font-table-data text-table-data text-on-surface" for="return_reason">Return Reason <span class="text-error">*</span></label>
+<select class="h-8 w-full bg-surface-container-lowest text-on-surface border border-error rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-error focus:border-transparent appearance-none transition-shadow" id="return_reason">
+<option disabled="" selected="" value="">Select a reason...</option>
+<option value="defective">Defective Product</option>
+<option value="wrong_item">Wrong Item Shipped</option>
+<option value="not_needed">No Longer Needed</option>
+</select>
+<!-- Validation Message -->
+<div class="flex items-center gap-unit mt-1 text-error">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span class="font-label-caps text-label-caps">Return Reason is required</span>
+</div>
+</div>
+<div class="flex flex-col gap-stack-dense">
+<label class="font-table-data text-table-data text-on-surface" for="inspection_lane">Inspection Lane Assignment <span class="text-error">*</span></label>
+<select class="h-8 w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded px-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent appearance-none transition-shadow" id="inspection_lane">
+<option value="lane_a">Lane A (Standard)</option>
+<option selected="" value="lane_b">Lane B (Electronics)</option>
+<option value="lane_c">Lane C (Heavy Goods)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant hidden">
+<!-- Custom chevron could go here if appearance-none is removed, but standard select is fine for dense UI -->
+</div>
+</div>
+</div>
+<div class="h-px w-full bg-surface-variant"></div>
+<!-- Section: Notes -->
+<div class="flex flex-col gap-stack-dense">
+<label class="font-table-data text-table-data text-on-surface" for="exception_notes">Exception Notes <span class="text-on-surface-variant font-normal ml-1">(Optional)</span></label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface border border-outline-variant rounded p-2 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow resize-y" id="exception_notes" rows="3">Customer indicated packaging was damaged upon arrival, but product appears intact on initial scan.</textarea>
+</div>
+</form>
+</div>
+</div>
+</main>
+</body></html>

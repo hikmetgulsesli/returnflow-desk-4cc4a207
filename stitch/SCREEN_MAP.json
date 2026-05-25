@@ -1,0 +1,38 @@
+[
+  {
+    "screenId": "a3e526b33e9b4f89b157f2e6e37711a8",
+    "name": "Triage Board - ReturnFlow Desk",
+    "type": "app-screen",
+    "description": "Triage Board - ReturnFlow Desk screen",
+    "surfaceIds": [
+      "SURF_TRIAGE_BOARD"
+    ]
+  },
+  {
+    "screenId": "608f6f2bb5b34cc4be316b3bcb072def",
+    "name": "Empty and Error Recovery - ReturnFlow Desk",
+    "type": "error",
+    "description": "Empty and Error Recovery - ReturnFlow Desk screen",
+    "surfaceIds": [
+      "SURF_EMPTY_AND_ERROR_RECOVERY"
+    ]
+  },
+  {
+    "screenId": "1dbb43f6829e46bf9fb32fcf4f804583",
+    "name": "Customer Operations - ReturnFlow Desk",
+    "type": "app-screen",
+    "description": "Customer Operations - ReturnFlow Desk screen",
+    "surfaceIds": [
+      "SURF_CUSTOMER_OPERATIONS"
+    ]
+  },
+  {
+    "screenId": "22c76d93667d4cc69991d612f915c632",
+    "name": "Customer Editor - ReturnFlow Desk",
+    "type": "form",
+    "description": "Customer Editor - ReturnFlow Desk screen",
+    "surfaceIds": [
+      "SURF_CUSTOMER_EDITOR"
+    ]
+  }
+]

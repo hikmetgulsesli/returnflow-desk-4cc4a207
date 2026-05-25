@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Operations - ReturnFlow Desk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#271901",
+                        "on-surface": "#1b1b1d",
+                        "tertiary-fixed": "#fcdeb5",
+                        "secondary-fixed": "#d3e4fe",
+                        "inverse-surface": "#303032",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-container": "#d0e1fb",
+                        "surface": "#fcf8fa",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-high": "#eae7e9",
+                        "secondary": "#505f76",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-background": "#1b1b1d",
+                        "on-tertiary-fixed": "#271901",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "primary-fixed-dim": "#bec6e0",
+                        "background": "#fcf8fa",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#565e74",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-secondary-container": "#54647a",
+                        "inverse-primary": "#bec6e0",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "surface-dim": "#dcd9db",
+                        "on-tertiary-container": "#98805d",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-container": "#f0edef",
+                        "on-error": "#ffffff",
+                        "primary": "#000000",
+                        "surface-bright": "#fcf8fa",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "outline-variant": "#c6c6cd",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "tertiary": "#000000",
+                        "on-primary-container": "#7c839b",
+                        "on-secondary-fixed": "#0b1c30",
+                        "primary-fixed": "#dae2fd",
+                        "primary-container": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "stack-compact": "8px",
+                        "unit": "4px",
+                        "margin-page": "24px",
+                        "stack-dense": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "table-data": ["Inter"],
+                        "display-metric": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "table-data": ["13px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-metric": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom scrollbar for density */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c6c6cd; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #76777d; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen w-full overflow-hidden flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden bg-surface text-primary font-body-md text-body-md docked full-width top-0 sticky z-50 border-b border-outline-variant flat no shadows flex justify-between items-center h-10 px-gutter w-full">
+<div class="flex items-center gap-unit">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">ReturnFlow Desk</span>
+</div>
+<div class="flex items-center gap-stack-compact text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors rounded p-1 text-[20px]" data-icon="search">search</span>
+<span class="material-symbols-outlined cursor-pointer active:opacity-80 hover:bg-surface-container-low transition-colors rounded p-1 text-[20px]" data-icon="menu">menu</span>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full p-unit gap-stack-compact bg-surface-container-low text-primary font-body-sm text-body-sm h-screen w-64 fixed left-0 top-0 z-40 border-r border-outline-variant flat no shadows transition-all duration-150 ease-in-out">
+<div class="flex items-center gap-stack-compact p-gutter mb-stack-compact">
+<div class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-bold">RF</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-black text-on-surface">RF Desk</div>
+<div class="text-[11px] text-on-surface-variant">Station 04</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary h-8 rounded flex items-center justify-center gap-unit font-bold hover:bg-on-surface transition-colors mb-stack-compact">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Create Return
+            </button>
+<div class="flex-1 flex flex-col gap-unit">
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out bg-secondary-container text-on-secondary-container font-bold" href="#">
+<span class="material-symbols-outlined text-[20px] icon-fill">assignment_return</span>
+<span>Triage</span>
+</a>
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports</span>
+</a>
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-unit flex flex-col gap-unit">
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-stack-compact p-2 rounded hover:bg-surface-container-high transition-all duration-150 ease-in-out text-on-surface-variant hover:text-on-surface" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col h-full bg-surface-bright">
+<!-- Desktop Top Search Bar / Global Actions -->
+<div class="hidden md:flex justify-between items-center h-12 px-margin-page border-b border-outline-variant bg-surface">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-8 pl-8 pr-2 bg-surface-container-low border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm transition-all" placeholder="Search orders, customers, or items ( / )" type="text"/>
+</div>
+<div class="flex items-center gap-stack-compact text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-on-surface transition-colors p-1">notifications</span>
+<div class="w-6 h-6 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs ml-2 cursor-pointer">
+                        WA
+                    </div>
+</div>
+</div>
+<!-- Dashboard Content Scrollable Area -->
+<div class="flex-1 overflow-auto p-gutter md:p-margin-page flex flex-col gap-margin-page">
+<!-- Metrics Header -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Returns</span>
+<div class="flex items-end justify-between mt-2">
+<span class="font-display-metric text-display-metric text-on-surface">1,248</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>12%</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between border-l-4 border-l-error">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pending Triage</span>
+<div class="flex items-end justify-between mt-2">
+<span class="font-display-metric text-display-metric text-error">42</span>
+<span class="text-body-sm font-body-sm text-error flex items-center"><span class="material-symbols-outlined text-[14px] mr-1">warning</span>High</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between border-l-4 border-l-on-tertiary-container">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Flagged Exceptions</span>
+<div class="flex items-end justify-between mt-2">
+<span class="font-display-metric text-display-metric text-on-surface">18</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Review Req.</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 flex flex-col justify-between border-l-4 border-l-primary-fixed-dim">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Refund Ready</span>
+<div class="flex items-end justify-between mt-2">
+<span class="font-display-metric text-display-metric text-on-surface">305</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Auto-proc.</span>
+</div>
+</div>
+</section>
+<!-- Data Table Section -->
+<section class="flex-1 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden min-h-[400px]">
+<!-- Table Toolbar -->
+<div class="p-3 border-b border-outline-variant flex flex-col sm:flex-row justify-between items-start sm:items-center gap-stack-compact bg-surface-container-low">
+<div class="flex items-center gap-stack-compact flex-wrap">
+<select class="h-8 border-outline-variant bg-surface rounded text-body-sm font-body-sm px-2 focus:ring-1 focus:ring-primary focus:border-primary">
+<option>Status: All</option>
+<option>Pending Triage</option>
+<option>Inspected</option>
+<option>Exception</option>
+</select>
+<select class="h-8 border-outline-variant bg-surface rounded text-body-sm font-body-sm px-2 focus:ring-1 focus:ring-primary focus:border-primary">
+<option>Lane: All</option>
+<option>Lane 1 (Electronics)</option>
+<option>Lane 2 (Apparel)</option>
+</select>
+<button class="h-8 px-2 border border-outline-variant rounded bg-surface hover:bg-surface-container flex items-center gap-1 text-body-sm font-body-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                Date Range
+                            </button>
+</div>
+<div class="flex items-center gap-unit">
+<button class="h-8 w-8 border border-outline-variant rounded bg-surface hover:bg-surface-container flex items-center justify-center transition-colors" title="Export">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="h-8 w-8 border border-outline-variant rounded bg-surface hover:bg-surface-container flex items-center justify-center transition-colors" title="Filter Settings">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Table Container (Dense) -->
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead class="bg-surface-container-low sticky top-0 z-10 shadow-[0_1px_0_#e4e2e4]">
+<tr>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant w-10">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-3.5 w-3.5" type="checkbox"/>
+</th>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant">Customer</th>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant">Order ID</th>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant">Return Reason</th>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant">Status</th>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant">Lane</th>
+<th class="px-3 py-2 font-label-caps text-label-caps text-on-surface-variant text-right">Last Activity</th>
+</tr>
+</thead>
+<tbody class="font-table-data text-table-data divide-y divide-outline-variant">
+<!-- Row 1 (Selected) -->
+<tr class="bg-secondary-fixed cursor-pointer transition-colors hover:bg-secondary-fixed-dim">
+<td class="px-3 py-1.5 h-[32px]">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-3.5 w-3.5" type="checkbox"/>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface font-semibold">Sarah Jenkins</td>
+<td class="px-3 py-1.5 h-[32px] font-mono text-[12px] text-on-surface-variant">ORD-992-A</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant truncate max-w-[200px]">Defective / Does not power on</td>
+<td class="px-3 py-1.5 h-[32px]">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-error-container text-on-error-container border border-[#ffb4ab]">
+                                            EXCEPTION
+                                        </span>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant">L1-Elec</td>
+<td class="px-3 py-1.5 h-[32px] text-right text-on-surface-variant text-[11px]">10m ago</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="px-3 py-1.5 h-[32px]">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-3.5 w-3.5" type="checkbox"/>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface">Michael Chang</td>
+<td class="px-3 py-1.5 h-[32px] font-mono text-[12px] text-on-surface-variant">ORD-881-X</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant truncate max-w-[200px]">Wrong size ordered</td>
+<td class="px-3 py-1.5 h-[32px]">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-tertiary-fixed text-on-tertiary-fixed border border-tertiary-fixed-dim">
+                                            PENDING
+                                        </span>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant">L2-App</td>
+<td class="px-3 py-1.5 h-[32px] text-right text-on-surface-variant text-[11px]">45m ago</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors bg-surface-container-lowest">
+<td class="px-3 py-1.5 h-[32px]">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-3.5 w-3.5" type="checkbox"/>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface">Elena Rodriguez</td>
+<td class="px-3 py-1.5 h-[32px] font-mono text-[12px] text-on-surface-variant">ORD-104-Y</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant truncate max-w-[200px]">No longer needed</td>
+<td class="px-3 py-1.5 h-[32px]">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#cce8e4] text-[#055047] border border-[#a0d2ca]">
+                                            INSPECTED
+                                        </span>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant">L3-Gen</td>
+<td class="px-3 py-1.5 h-[32px] text-right text-on-surface-variant text-[11px]">2h ago</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="px-3 py-1.5 h-[32px]">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-3.5 w-3.5" type="checkbox"/>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface">David Kim</td>
+<td class="px-3 py-1.5 h-[32px] font-mono text-[12px] text-on-surface-variant">ORD-552-Z</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant truncate max-w-[200px]">Item damaged in transit</td>
+<td class="px-3 py-1.5 h-[32px]">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-error-container text-on-error-container border border-[#ffb4ab]">
+                                            EXCEPTION
+                                        </span>
+</td>
+<td class="px-3 py-1.5 h-[32px] text-on-surface-variant">L1-Elec</td>
+<td class="px-3 py-1.5 h-[32px] text-right text-on-surface-variant text-[11px]">3h ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Preview Drawer (Visible based on selection) -->
+<aside class="hidden xl:flex flex-col w-[320px] bg-surface-container-lowest border-l border-outline-variant h-full">
+<div class="p-3 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<span class="font-headline-sm text-headline-sm text-on-surface">Return Details</span>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-auto p-3 flex flex-col gap-3">
+<!-- Header Info -->
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">ORD-992-A</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sarah Jenkins • Premium Member</p>
+</div>
+<!-- Status Bar -->
+<div class="bg-error-container text-on-error-container rounded p-2 border border-[#ffb4ab]">
+<div class="flex items-center gap-1 font-bold text-body-sm">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                        Exception Requires Review
+                    </div>
+<p class="text-[12px] mt-1 opacity-90">Item returned does not match serial number on file.</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-on-primary h-8 rounded text-body-sm font-bold hover:bg-on-surface transition-colors">Resolve</button>
+<button class="flex-1 bg-surface border border-outline-variant h-8 rounded text-body-sm font-bold hover:bg-surface-container transition-colors">Re-scan</button>
+</div>
+<hr class="border-outline-variant my-1"/>
+<!-- Activity Timeline -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-2">Activity History</h4>
+<div class="flex flex-col gap-2 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant">
+<div class="flex gap-2 relative z-10">
+<div class="w-6 h-6 rounded-full bg-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[12px] text-white">flag</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold">Flagged at Inspection</p>
+<p class="text-[11px] text-on-surface-variant">Today, 10:42 AM by WA-04</p>
+</div>
+</div>
+<div class="flex gap-2 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">login</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">Received at Dock</p>
+<p class="text-[11px] text-on-surface-variant">Today, 08:15 AM</p>
+</div>
+</div>
+<div class="flex gap-2 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">label</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">RMA Generated</p>
+<p class="text-[11px] text-on-surface-variant">Oct 12, 14:22 PM by Customer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</body></html>
