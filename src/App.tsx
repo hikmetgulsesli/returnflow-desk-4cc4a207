@@ -42,8 +42,11 @@ export default function App() {
     [desk],
   );
 
+  const showsEditor =
+    desk.snapshot.activePanel === 'record' || desk.snapshot.activePanel === 'create-return';
+
   const screen =
-    desk.snapshot.activeScreen === 'CustomerEditorReturnflowDesk'
+    showsEditor
       ? <CustomerEditorReturnflowDesk actions={actions} />
       : <CustomerOperationsReturnflowDesk actions={actions} />;
 
