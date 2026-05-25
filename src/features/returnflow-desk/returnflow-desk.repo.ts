@@ -8,11 +8,9 @@ const STORAGE_KEY = 'returnflow-desk:v1';
 export type ReturnflowStorageStatus = 'idle' | 'loaded' | 'persisted' | 'recovered' | 'unavailable';
 
 export interface PersistedReturnflowDeskState {
-  activeScreen: 'CustomerOperationsReturnflowDesk' | 'CustomerEditorReturnflowDesk';
   activeRoute: string;
   selectedRecordId: string | null;
   activePanel: string;
-  searchQuery: string;
   records: ReturnflowRecord[];
 }
 
@@ -23,11 +21,9 @@ export interface ReturnflowDeskLoadResult {
 }
 
 const defaultState: PersistedReturnflowDeskState = {
-  activeScreen: 'CustomerOperationsReturnflowDesk',
   activeRoute: 'triage',
   selectedRecordId: returnflowDeskFixture[0]?.id ?? null,
   activePanel: 'triage',
-  searchQuery: '',
   records: returnflowDeskFixture,
 };
 
@@ -67,17 +63,12 @@ function normalizeState(value: unknown): PersistedReturnflowDeskState {
     : defaultState.records;
 
   return {
-    activeScreen:
-      state.activeScreen === 'CustomerEditorReturnflowDesk'
-        ? 'CustomerEditorReturnflowDesk'
-        : defaultState.activeScreen,
     activeRoute: typeof state.activeRoute === 'string' ? state.activeRoute : defaultState.activeRoute,
     selectedRecordId:
       typeof state.selectedRecordId === 'string' || state.selectedRecordId === null
         ? state.selectedRecordId
         : defaultState.selectedRecordId,
     activePanel: typeof state.activePanel === 'string' ? state.activePanel : defaultState.activePanel,
-    searchQuery: typeof state.searchQuery === 'string' ? state.searchQuery : defaultState.searchQuery,
     records,
   };
 }
