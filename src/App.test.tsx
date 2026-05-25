@@ -7,4 +7,9 @@ describe('App', () => {
     render(<App />);
     expect(screen.getByRole('main')).toBeInTheDocument();
   });
+
+  it('renders the triage search button', () => {
+    render(<App />);
+    expect(screen.getByRole('button', { name: 'Search' })).toBeInTheDocument();
+  });
 });
