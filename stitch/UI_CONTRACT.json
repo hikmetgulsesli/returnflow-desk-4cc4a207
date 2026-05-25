@@ -1,0 +1,814 @@
+[
+  {
+    "screenId": "a3e526b33e9b4f89b157f2e6e37711a8",
+    "screenTitle": "Triage Board - ReturnFlow Desk",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "dashboard",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Triage",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Inventory",
+        "href": "#",
+        "line": 144
+      },
+      {
+        "type": "link",
+        "label": "Reports",
+        "href": "#",
+        "line": 148
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 152
+      },
+      {
+        "type": "link",
+        "label": "help",
+        "href": "#",
+        "line": 158
+      },
+      {
+        "type": "link",
+        "label": "logout",
+        "href": "#",
+        "line": 162
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 115
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 118
+      },
+      {
+        "type": "button",
+        "label": "Create Return",
+        "line": 131
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "sort",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "Assign",
+        "line": 208
+      },
+      {
+        "type": "button",
+        "label": "Assign",
+        "line": 223
+      },
+      {
+        "type": "button",
+        "label": "Inspect",
+        "line": 247
+      },
+      {
+        "type": "button",
+        "label": "Review",
+        "line": 277
+      },
+      {
+        "type": "input",
+        "label": "Search tracking ID or customer (press / to focus)",
+        "inputType": "text",
+        "placeholder": "Search tracking ID or customer (press / to focus)",
+        "line": 108
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "dashboard",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Triage",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Inventory",
+        "href": "#",
+        "line": 144
+      },
+      {
+        "type": "link",
+        "label": "Reports",
+        "href": "#",
+        "line": 148
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 152
+      },
+      {
+        "type": "link",
+        "label": "help",
+        "href": "#",
+        "line": 158
+      },
+      {
+        "type": "link",
+        "label": "logout",
+        "href": "#",
+        "line": 162
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 112
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 115
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 118
+      },
+      {
+        "type": "button",
+        "label": "Create Return",
+        "line": 131
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "sort",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "Assign",
+        "line": 208
+      },
+      {
+        "type": "button",
+        "label": "Assign",
+        "line": 223
+      },
+      {
+        "type": "button",
+        "label": "Inspect",
+        "line": 247
+      },
+      {
+        "type": "button",
+        "label": "Review",
+        "line": 277
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search tracking ID or customer (press / to focus)",
+        "inputType": "text",
+        "placeholder": "Search tracking ID or customer (press / to focus)",
+        "line": 108
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 18,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "608f6f2bb5b34cc4be316b3bcb072def",
+    "screenTitle": "Empty and Error Recovery - ReturnFlow Desk",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "dashboard",
+        "href": "#",
+        "line": 119
+      },
+      {
+        "type": "link",
+        "label": "Triage",
+        "href": "#",
+        "line": 123
+      },
+      {
+        "type": "link",
+        "label": "Inventory",
+        "href": "#",
+        "line": 127
+      },
+      {
+        "type": "link",
+        "label": "Reports",
+        "href": "#",
+        "line": 131
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 135
+      },
+      {
+        "type": "link",
+        "label": "help",
+        "href": "#",
+        "line": 149
+      },
+      {
+        "type": "link",
+        "label": "logout",
+        "href": "#",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "Create Return",
+        "line": 142
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 194
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 199
+      },
+      {
+        "type": "button",
+        "label": "Filters (2)",
+        "line": 201
+      },
+      {
+        "type": "button",
+        "label": "Retry",
+        "line": 214
+      },
+      {
+        "type": "button",
+        "label": "Clear All Filters",
+        "line": 231
+      },
+      {
+        "type": "button",
+        "label": "Create New Return",
+        "line": 234
+      },
+      {
+        "type": "input",
+        "label": "Search tracking ID... (/)",
+        "inputType": "text",
+        "placeholder": "Search tracking ID... (/)",
+        "line": 166
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "dashboard",
+        "href": "#",
+        "line": 119
+      },
+      {
+        "type": "link",
+        "label": "Triage",
+        "href": "#",
+        "line": 123
+      },
+      {
+        "type": "link",
+        "label": "Inventory",
+        "href": "#",
+        "line": 127
+      },
+      {
+        "type": "link",
+        "label": "Reports",
+        "href": "#",
+        "line": 131
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 135
+      },
+      {
+        "type": "link",
+        "label": "help",
+        "href": "#",
+        "line": 149
+      },
+      {
+        "type": "link",
+        "label": "logout",
+        "href": "#",
+        "line": 153
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Create Return",
+        "line": 142
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 194
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 199
+      },
+      {
+        "type": "button",
+        "label": "Filters (2)",
+        "line": 201
+      },
+      {
+        "type": "button",
+        "label": "Retry",
+        "line": 214
+      },
+      {
+        "type": "button",
+        "label": "Clear All Filters",
+        "line": 231
+      },
+      {
+        "type": "button",
+        "label": "Create New Return",
+        "line": 234
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search tracking ID... (/)",
+        "inputType": "text",
+        "placeholder": "Search tracking ID... (/)",
+        "line": 166
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 18,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "1dbb43f6829e46bf9fb32fcf4f804583",
+    "screenTitle": "Customer Operations - ReturnFlow Desk",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "dashboard",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Triage",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Inventory",
+        "href": "#",
+        "line": 144
+      },
+      {
+        "type": "link",
+        "label": "Reports",
+        "href": "#",
+        "line": 148
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 152
+      },
+      {
+        "type": "link",
+        "label": "help",
+        "href": "#",
+        "line": 158
+      },
+      {
+        "type": "link",
+        "label": "logout",
+        "href": "#",
+        "line": 162
+      },
+      {
+        "type": "button",
+        "label": "Create Return",
+        "line": 131
+      },
+      {
+        "type": "button",
+        "label": "Date Range",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "Export",
+        "line": 242
+      },
+      {
+        "type": "button",
+        "label": "Filter Settings",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 341
+      },
+      {
+        "type": "button",
+        "label": "Resolve",
+        "line": 361
+      },
+      {
+        "type": "button",
+        "label": "Re-scan",
+        "line": 362
+      },
+      {
+        "type": "input",
+        "label": "Search orders, customers, or items ( / )",
+        "inputType": "text",
+        "placeholder": "Search orders, customers, or items ( / )",
+        "line": 174
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 225
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 231
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 256
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 270
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 286
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 302
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 318
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "dashboard",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Triage",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Inventory",
+        "href": "#",
+        "line": 144
+      },
+      {
+        "type": "link",
+        "label": "Reports",
+        "href": "#",
+        "line": 148
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 152
+      },
+      {
+        "type": "link",
+        "label": "help",
+        "href": "#",
+        "line": 158
+      },
+      {
+        "type": "link",
+        "label": "logout",
+        "href": "#",
+        "line": 162
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Create Return",
+        "line": 131
+      },
+      {
+        "type": "button",
+        "label": "Date Range",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "Export",
+        "line": 242
+      },
+      {
+        "type": "button",
+        "label": "Filter Settings",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 341
+      },
+      {
+        "type": "button",
+        "label": "Resolve",
+        "line": 361
+      },
+      {
+        "type": "button",
+        "label": "Re-scan",
+        "line": 362
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search orders, customers, or items ( / )",
+        "inputType": "text",
+        "placeholder": "Search orders, customers, or items ( / )",
+        "line": 174
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 225
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 231
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 256
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 270
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 286
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 302
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 318
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 22,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "22c76d93667d4cc69991d612f915c632",
+    "screenTitle": "Customer Editor - ReturnFlow Desk",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Cancel Edit",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "Save Return",
+        "line": 183
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 205
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 213
+      },
+      {
+        "type": "input",
+        "label": "email",
+        "inputType": "email",
+        "line": 217
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 225
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 239
+      },
+      {
+        "type": "input",
+        "label": "textarea",
+        "inputType": "textarea",
+        "line": 253
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 201
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Cancel Edit",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "Save Return",
+        "line": 183
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 205
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 213
+      },
+      {
+        "type": "input",
+        "label": "email",
+        "inputType": "email",
+        "line": 217
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 225
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 239
+      },
+      {
+        "type": "input",
+        "label": "textarea",
+        "inputType": "textarea",
+        "line": 253
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
