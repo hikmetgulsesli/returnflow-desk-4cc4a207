@@ -11,6 +11,8 @@ export interface ReturnflowDeskSnapshot {
   activeScreen: string;
   activeRoute: string;
   selectedRecord: ReturnflowRecord | null;
+  searchQuery: string;
+  records: ReturnflowRecord[];
   counts: Record<string, number>;
   storageStatus: ReturnflowStorageStatus;
   lastError: string | null;
@@ -22,7 +24,11 @@ export interface ReturnflowDeskStore {
   navigate: (route: string) => void;
   selectRecord: (recordId: string) => void;
   setActivePanel: (panel: string) => void;
+  searchRecords: (query: string) => void;
   createDraftReturn: () => void;
+  saveSelectedReturn: () => void;
+  cancelEdit: () => void;
+  retryLoad: () => void;
 }
 
 function countRecords(records: ReturnflowRecord[]): Record<string, number> {
@@ -50,12 +56,21 @@ export function useReturnflowDeskStore(): ReturnflowDeskStore {
 
   const snapshot = useMemo<ReturnflowDeskSnapshot>(() => {
     const selectedRecord = state.records.find((record) => record.id === state.selectedRecordId) ?? null;
+    const normalizedQuery = state.searchQuery.trim().toLowerCase();
+    const visibleRecords = normalizedQuery
+      ? state.records.filter((record) =>
+          [record.id, record.customer, record.sku, record.reason, record.status, record.priority]
+            .some((value) => value.toLowerCase().includes(normalizedQuery)),
+        )
+      : state.records;
 
     return {
-      activeScreen: 'TriageBoardReturnflowDesk',
+      activeScreen: state.activeScreen,
       activeRoute: state.activeRoute,
       selectedRecord,
-      counts: countRecords(state.records),
+      searchQuery: state.searchQuery,
+      records: visibleRecords,
+      counts: countRecords(visibleRecords),
       storageStatus,
       lastError,
       activePanel: state.activePanel,
@@ -68,10 +83,22 @@ export function useReturnflowDeskStore(): ReturnflowDeskStore {
       updateState((current) => ({ ...current, activeRoute: route, activePanel: route }));
     },
     selectRecord: (recordId) => {
-      updateState((current) => ({ ...current, selectedRecordId: recordId, activePanel: 'record' }));
+      updateState((current) => ({
+        ...current,
+        selectedRecordId: recordId,
+        activeScreen: 'CustomerEditorReturnflowDesk',
+        activePanel: 'record',
+      }));
     },
     setActivePanel: (panel) => {
       updateState((current) => ({ ...current, activePanel: panel }));
+    },
+    searchRecords: (query) => {
+      updateState((current) => ({
+        ...current,
+        searchQuery: query,
+        activePanel: query ? 'search-results' : 'triage',
+      }));
     },
     createDraftReturn: () => {
       updateState((current) => {
@@ -89,9 +116,27 @@ export function useReturnflowDeskStore(): ReturnflowDeskStore {
           ...current,
           records: [draft, ...current.records],
           selectedRecordId: draft.id,
+          activeScreen: 'CustomerEditorReturnflowDesk',
           activePanel: 'create-return',
         };
       });
+    },
+    saveSelectedReturn: () => {
+      updateState((current) => ({
+        ...current,
+        activeScreen: 'CustomerOperationsReturnflowDesk',
+        activePanel: 'saved',
+      }));
+    },
+    cancelEdit: () => {
+      updateState((current) => ({
+        ...current,
+        activeScreen: 'CustomerOperationsReturnflowDesk',
+        activePanel: 'triage',
+      }));
+    },
+    retryLoad: () => {
+      setStore(loadReturnflowDeskState());
     },
   };
 }
